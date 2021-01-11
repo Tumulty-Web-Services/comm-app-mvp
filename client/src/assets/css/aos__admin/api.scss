@@ -1,0 +1,233 @@
+// @import '../aos__base', '../aos__base';
+
+.aos__api {
+
+    h4 {
+        word-break: break-all;
+        font-size: 1.1rem;
+        padding-left: 0;
+
+        span {
+            // font-size: 1.4rem;
+        }
+    }
+
+    #input-code {
+        background: $text_primary;
+        border: none;
+        resize: none;
+        padding: 20px;
+        border-radius: $radius-standard;
+        color: white;
+        outline: none;
+        min-height: 200px;
+    }
+
+    .code {
+        background: $text_primary;
+        padding: 20px;
+        color: $color-white;
+
+    }
+
+    pre {
+        margin: 0;
+    }
+
+    .code-box-body {
+        // border: solid 1px rgba(255, 255, 255, .1);
+        // padding: 20px;
+        padding: 0;
+        margin-bottom: 50px;
+
+        pre {
+
+            code {
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    // .code-box-title {
+    //     margin-top: 20px;
+    // }
+
+    .api-section .documentation {
+        padding-bottom: 100px;
+    }
+    .api-section .code-box:last-child {
+        padding-bottom: 100px;
+    }
+
+    .line {
+        display: block;
+    }
+
+    .variable {
+        color: $color-blue;
+    }
+
+    .object {
+        color: $color-green;
+    }
+
+    .text-white {
+        color: $color-white;
+        background-color: none;
+    }
+
+    .endpoint {
+        // border: solid 1px rgba(255,255,255,.1);
+        padding: 10px;
+        border-radius: 0.2rem;
+        background: $text_primary;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .route-name {
+        margin-top: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .param {
+
+        padding: 30px 15px;
+        border-bottom: solid 1px rgba(255, 255, 255, .1);
+        :first-child & {
+            border-top: solid 1px rgba(255, 255, 255, .1);
+        }
+
+        .param-name {
+            text-align: right;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .param-optional {
+            text-align: right;
+            margin-bottom: 0;
+        }
+
+        .param-description {
+            margin-bottom: 0;
+        }
+
+        .param-example {
+            margin-bottom: 0;
+        }
+
+        .example-text {
+            color: $color-blue !important;
+        }
+    }
+
+    .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 1em;
+        background: #282830;
+        color: #d1d9e1;
+        border: none;
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+        color: #969896;
+        font-style: italic;
+    }
+
+    .hljs-addition,
+    
+    .hljs-literal,
+    .hljs-selector-tag,
+    .hljs-type {
+        color: $color-blue;
+    }
+
+    .hljs-keyword {
+        color: $color-yellow;
+    }
+
+    .hljs-number,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo {
+        color: #f99157;
+    }
+
+    .hljs-doctag,
+    .hljs-regexp,
+    .hljs-string {
+        color: #8abeb7;
+        // color: red;
+    }
+
+    .hljs-string {
+        white-space: pre-wrap;
+        word-break: break-word;
+        word-spacing: normal;
+
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+        /* display: inline-block; */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        word-break: break-all;
+
+        width: auto;
+        color: $color-white;
+        // color: red;
+    }
+
+    .hljs-built_in,
+    .hljs-name,
+    .hljs-section,
+    .hljs-title {
+        color: #b5bd68;
+    }
+
+    .hljs-class .hljs-title,
+    .hljs-selector-id,
+    .hljs-template-variable,
+    .hljs-variable {
+        color: #ffcc66;
+    }
+
+    .hljs-name,
+    .hljs-section,
+    .hljs-strong {
+        font-weight: bold;
+    }
+
+    .hljs-bullet,
+    .hljs-link,
+    .hljs-meta,
+    .hljs-subst,
+    .hljs-symbol {
+        color: #f99157;
+    }
+
+    .hljs-symbol {
+        color: $color-green;
+    }
+
+    .hljs-deletion {
+        color: #dc322f;
+    }
+
+    .hljs-formula {
+        background: #eee8d5;
+    }
+
+    .hljs-attr,
+    .hljs-attribute {
+        color: $color-green;
+        vertical-align: top;
+    }
+
+    .hljs-emphasis {
+        font-style: italic;
+    }
+}

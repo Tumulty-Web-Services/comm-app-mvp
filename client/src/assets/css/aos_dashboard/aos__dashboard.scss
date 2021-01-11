@@ -1,0 +1,125 @@
+// @import 'aos__base', 'aos__base';
+
+.aos__admin.dashboard {
+
+    i.material-icons {
+        position: relative;
+        top: 6px;
+
+    }
+
+    .btn, .btn-info {
+        background: $color_root;
+    }
+
+    .btn.btn-success {
+        background: $color-green;
+    }
+
+    .card {
+        border-radius: 6px;
+        padding-top: 0; 
+        padding-bottom: 5px;
+        background: $background_secondary;
+        margin-bottom: 60px;
+        color: $text_primary;
+    }
+
+    .card-body {
+        position: relative;
+        border-radius: 6px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 40px !important;
+
+        i {
+            font-size: 2rem;
+            border: solid 2px $color_root;
+            border-radius: 100%;
+            position: absolute;
+            top: 20px;
+            right: 0;
+            padding: 5px;
+            font-weight: bold;
+
+            &.finished {
+                border-color: $color-green
+            }
+        }
+        
+    }
+
+    .card-footer {
+        border-top: solid 1px $shallow_border;
+        padding-top: 20px
+    }
+
+ 
+    .card-number {
+        position: absolute;
+        top: -40px;
+        left: 0px;
+        background: $color_root;
+        color: white;
+        padding: 10px;
+        font-size: 1.8rem;
+        border-radius: 6px;
+
+        &.finished {
+            background: $color-green
+        }
+
+    }
+
+    .page-lesson {
+
+        div {
+            input[type="file"] {
+                // padding: 30px !important;
+                // background: red !important;
+                display: none;
+            }
+
+            label {
+                color: $color_root;
+                font-weight: bold;
+                margin-bottom: 20px;
+                display: inline-block;
+
+                i {
+                    // top: px;
+                    // margin-right: 10px;
+                    color: $text_primary;
+                   
+                }
+            }
+        }
+
+        button {
+            padding: 8px 40px;
+
+        }
+
+        @media(max-width: 600px) {
+            button {
+                margin-top: 20px;
+            width: 100%;
+            }
+        }
+
+        .card-body {
+            padding-top: 20px !important;
+        }
+        .card-footer {
+            padding-bottom: 20px;
+        }
+
+        .lesson-part {
+            margin-bottom: 0;
+        }
+
+
+    }
+
+}
+

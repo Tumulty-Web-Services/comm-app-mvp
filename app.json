@@ -1,0 +1,40 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "description": "heroku-config",
+  "env": {
+    "cookieKey": {
+      "required": true
+    },
+    "GOOGLE_CLIENT_ID": {
+      "required": true
+    },
+    "GOOGLE_CLIENT_SECRET": {
+      "required": true
+    },
+    "MONGO_URI": {
+      "required": true
+    },
+    "S3_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "S3_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "SENDGRID_API_KEY": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "name": "johnaher",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}

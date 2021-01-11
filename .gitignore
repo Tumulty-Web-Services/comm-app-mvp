@@ -1,0 +1,8 @@
+node_modules
+
+/client/node_modules.json
+
+
+/keys/keysDEV.js
+.env
+notes.txt

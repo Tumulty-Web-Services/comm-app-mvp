@@ -1,0 +1,61 @@
+// @import '../aos__base', '../aos__base';
+
+
+.aos__modal {
+
+    position: fixed;
+    left: calc;
+    opacity: 0;
+    display: none;
+    z-index: 1100;
+    transition: opacity 750ms ease-in-out;
+    left: calc(50% - 300px);
+    top: 20%;
+    box-shadow: $box-shadow-3;
+    max-height: calc(100vh - 40%);
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 3px;
+
+    .aos__modalContainer {
+        width: 768px;
+        max-width: 100%;
+        padding: 20px;
+        background: $color_black_offset;
+        color: white;
+    }
+
+    .aos__modalTitle {
+        margin-top: 0;
+        font-size: 1.75rem;
+    }
+    @media(max-width: 768px) {
+        max-width: 95%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 20%;
+    }
+
+    select {
+        display: block;
+    }
+
+    .aos__modalFields {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+#aos__modalBackground {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, .3);
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .7));
+    z-index: 1000;
+}

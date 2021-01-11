@@ -1,0 +1,57 @@
+// @import '../aos__base', '../aos__base';
+
+.aos__notification {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: linear-gradient(to bottom right, $color_black_offset, $color_black);
+    color: $color-white;
+    padding: 20px;
+    border-top-left-radius: $radius-standard;
+    border-bottom-left-radius: $radius-standard;
+    z-index: 1100;
+    box-shadow: $box-shadow-1;
+    width: 300px;
+    border: solid 1px rgba(255, 255, 255, .1);
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    transform: translateX(300px);
+
+    .aos__notificationTitle {
+        font-size: 0.9rem;
+    }
+
+    .aos__notificationText {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+    }
+
+    .aos__notificationRemove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 8px;
+        background: none;
+        border: none;
+        width: auto;
+        color: $color-white;
+    }
+    .aos__notificationRemove:hover {
+        cursor: pointer;
+    }
+}
+
+//create a loop to push each new notification down
+$elements: 15;
+@for $i from 1 to $elements {
+    .aos__notification:nth-child(#{$i}) {
+        top: #{$i * 70}px;
+    }
+}
+
+.aos__notification.open {
+
+    transform: translateX(0px);
+}

@@ -1,0 +1,187 @@
+// this css file declares all our root stylesheets
+
+/****************************************************
+*****************************************************
+Variables TO SET
+*****************************************************
+*****************************************************/
+
+$font_family_main: 'Lato', sans-serif;
+$font_family_secondary: 'Montserrat', sans-serif;
+
+/*
+the following are fonts that are hooked in
+'Lato', sans-serif;
+'$font_family_main', sans-serif;
+'Open Sans', sans-serif;
+'Roboto', sans-serif;
+'Fjalla One', sans-serif;
+'Mukta', sans-serif;
+
+*/
+
+/****************************************************
+*****************************************************
+Default is dark
+
+Possible values:
+light
+dark
+*****************************************************
+*****************************************************/
+$color_scheme: 'light';
+
+$color_white: white;
+$color_white_offset: rgba(255,255,255,.6);
+$color_white_offset: #ddd;
+
+$color_black: #181818;
+$color_black_offset: #111;
+
+$color_red: #f44336;
+$color_red_compliment: firebrick;
+
+$color_green: #4caf50;
+$color_green_compliment: rgba(76, 175, 80, .8);
+
+$color_blue: #039be5;
+$color_blue_compliment: #0082c8;
+
+$color-purple: #5A57ED;
+$color_purple_compliment: purple;
+
+$color_yellow: #ff9800;
+$color_yellow_compliment: #F09819;
+
+
+$color_root: #7AD7F5;
+$color_root_offset: #a4508b;
+
+/****************************************************
+*****************************************************
+Backgrounds
+*****************************************************
+*****************************************************/
+$background_primary: $color_black_offset;
+$background_secondary: $color_black;
+$background_highlight: #333;
+$card_color: #282830;
+
+/****************************************************
+*****************************************************
+Text
+*****************************************************
+*****************************************************/
+$text_primary: $color_white;
+$text_primary_muted: $color_white_offset;
+
+$text_gradient: linear-gradient(to right, #a4508b 0%, #B621FE 74%);
+$title_font_size: 20px;
+$text_font_size: 14px;
+
+/****************************************************
+*****************************************************
+Text
+*****************************************************
+*****************************************************/
+$shallow_border: rgba(255,255,255,.2);
+
+/****************************************************
+*****************************************************
+Our theme selector
+*****************************************************
+*****************************************************/
+
+@if $color_scheme == light {
+    $background_primary:#E3E8EE;
+    $background_secondary: $color_white;
+    $background_highlight: #D8D8D8;
+
+    $card_color: white;
+    
+    $text_primary: #2a2f45;
+    $text_primary_muted: #2a2f45;;
+    
+
+    //borders
+    $shallow_border: rgba(0,0,0,.2);
+}
+
+/****************************************************
+*****************************************************
+Common Card Values
+*****************************************************
+*****************************************************/
+$card-padding: 15px;
+
+
+/****************************************************
+*****************************************************
+Common Radius
+*****************************************************
+*****************************************************/
+$radius-standard: 2px;
+
+
+/****************************************************
+*****************************************************
+Sidebar values
+*****************************************************
+*****************************************************/
+$sidebar-width: 225px;
+
+
+/****************************************************
+*****************************************************
+Box Shadows
+*****************************************************
+*****************************************************/
+$box-shadow-1: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+$box-shadow-2: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+$box-shadow-3: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+$box-shadow-4: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2);
+$box-shadow-5: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+
+
+
+////////////////////
+////////////////////
+////////////////////
+////////////////////
+////////////////////
+
+
+
+//dark scrollbar
+.scrollbar {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #646464;
+    }
+
+    &::-webkit-scrollbar-button {
+        background-color: #666;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+        background-color: #000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 50px;
+        background-color: #666;
+        border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: #646464;
+    }
+
+    &::-webkit-resizer {
+        background-color: #666;
+    }
+}
