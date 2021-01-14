@@ -80,8 +80,6 @@ class Dashboard extends Component {
         
         return finished
 
-        console.log(finished)
-
     }
 
     render() {
