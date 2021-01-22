@@ -29,7 +29,7 @@ class Lesson extends Component {
 
         step: 1,
 
-        timer: 180,
+        timer: 160,
         current_time: '',
 
         video_1: '',
