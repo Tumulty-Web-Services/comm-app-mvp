@@ -29,7 +29,7 @@ class Lesson extends Component {
 
         step: 1,
 
-        timer: 160,
+        timer: 180,
         current_time: '',
 
         video_1: '',
@@ -53,7 +53,7 @@ class Lesson extends Component {
         } else {
             if(step === 13 || step === 18 ) {
                 current_time = this.state.timer;
-                this.setState({ current_time})
+                this.setState({ current_time })
             }
         }
 
@@ -107,6 +107,12 @@ class Lesson extends Component {
             tab: '/dashboard',
             drop: ''
         })
+
+        // if the user is on module on 3.1 or greater
+        // decrease the timer from 180 to 160
+        if(this.props.match.params.module_id >= 3.1) {
+            this.setState( { timer: 160 });
+        }
              
     }
 
