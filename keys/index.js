@@ -38,8 +38,6 @@ module.exports = {
 
     // LINKEDIN_CLIENT_ID: '78bqrekpej4xkd',
     // LINKEDIN_SECRET: 'MU3YoYtogUZFLI1V',
-    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID,
-    FACEBOOK_SECRET: process.env.FACEBOOK_SECRET,
 
 
     /*

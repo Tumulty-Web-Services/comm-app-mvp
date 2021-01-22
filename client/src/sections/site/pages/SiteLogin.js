@@ -4,7 +4,6 @@ import { Redirect, Link } from 'react-router-dom';
 
 
 import logoGoogle from '../../../assets/img/google.png';
-import logoFacebook from '../../../assets/img/facebook.png';
 
 
 import AosSite from '../components/main/AosSite';
@@ -68,15 +67,9 @@ class SiteLogin extends Component {
                                     <a href={"/auth/google" + this.props.location.search} className="social-button button-google " >
                                         <img  src={logoGoogle} alt="google logo" />
                                         <span >Login with Google</span>
-                                    </a>
-
-                                    <a href={"/auth/facebook" + this.props.location.search} className="social-button button-facebook " >
-                                        <img  src={logoFacebook} alt="google logo" />
-                                        <span >Login with Facebook</span>
-                                    </a>
+                                    </a>               
 
                                     <p style={{color: 'white'}}>By logging in, you agree to our  <Link to="/terms-of-service">Terms of Service</Link></p>
-
 
                                 </div>
                             </div>

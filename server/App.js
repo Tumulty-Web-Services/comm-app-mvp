@@ -107,8 +107,6 @@ mongoose.connect(keys.MONGO_URI, { useNewUrlParser: true }, function (err, db) {
 
         require('./routes/external/aws_s3')(app);
         require('./routes/external/sendgrid')(app);
-
-        require('./routes/auth/facebook')(app);
         require('./routes/auth/google')(app);
         require('./routes/auth/utility')(app);
 
