@@ -19,7 +19,8 @@
     "db:seed:undo:all": "node_modules/.bin/sequelize db:seed:undo:all ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client ",
-    "test": "mocha"
+    "test": "mocha",
+    "lint": " eslint . --ext js --fix"
   },
   "author": "COMM App",
   "license": "ISC",
@@ -59,5 +60,10 @@
     "socket.io-client": "^2.2.0",
     "stripe": "^6.20.0",
     "twilio": "^3.29.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }

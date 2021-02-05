@@ -23,7 +23,7 @@ These sockets work through proxying to localhost 4000 as
 
 // */
 
-// io.sockets.on('connection', function(socket){  
+// io.sockets.on('connection', function(socket){
 
 //     socket.broadcast.emit('new connection')
 
@@ -36,11 +36,10 @@ These sockets work through proxying to localhost 4000 as
 //     socket.on('refreshSupportTickets', () => {
 //         io.emit('refreshSupportTickets');
 //     })
-    
-    
+
 //     socket.on('disconnect', function(){
 
-//        console.log('user disconnected'); 
-     
+//        console.log('user disconnected');
+
 //     });
 // });

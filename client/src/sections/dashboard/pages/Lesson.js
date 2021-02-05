@@ -8,6 +8,7 @@ import VocalWarmups from '../assets/js/VocalWarmups'
 import WOD from '../assets/js/WOD'
 import WODExamples from '../assets/js/WODExamples'
 import Speech from '../assets/js/Speech'
+import ISQExplanation from '../assets/js/ISQExplanation'
 import Axios from 'axios';
 
 import CubeLoader from '../../../globalComponents/loaders/Cube';
@@ -219,7 +220,7 @@ class Lesson extends Component {
     getTitleAndPart = () => {
 
         if(this.state.step < 4 ) {
-            return {part: 1, title: 'Vocal Warm Ups'}
+            return {part: 1, title: 'Daily Affirmations'}
         } else if (this.state.step < 7) {
             return {part: 2, title: 'Word Of The Day'}
         } else {
@@ -286,99 +287,91 @@ class Lesson extends Component {
 
                                         {this.state.step === 2 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Please repeat the following phrase out loud three times.</h3>
+                                                <h3 className="instruction">Please repeat the following affirmation out loud 3-5 times</h3>
                                                 <p><VocalWarmups module={module_id} warmup={1} /></p>
                                                 <button onClick={() => this.setStep(3)} className="btn">Done</button>
                                             </div>
-                                        )}
-
+                                        )}            
                                         {this.state.step === 3 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Please repeat the following phrase out loud three times.</h3>
-                                                <p><VocalWarmups module={module_id} warmup={2} /></p>
-                                                <button onClick={() => this.setStep(4)} className="btn">Done</button>
+                                                <h3 className="instruction">Part 2: Word Of The Day</h3>
+                                                <p>Ready?</p>
+                                                <button onClick={() => this.setStep(4)} className="btn">Reveal WOD</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 4 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Part 2: Word Of The Day</h3>
-                                                <p>Ready?</p>
-                                                <button onClick={() => this.setStep(5)} className="btn">Reveal WOD</button>
+                                                <h3 className="instruction">The word of the day is:</h3>
+                                                <p><WOD module={module_id} /></p>
+                                                <button onClick={() => this.setStep(5)} className="btn" style={{marginRight: 10}}>See Example</button>
+                                                <button onClick={() => this.setStep(6)} className="btn btn-success">Next Step</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 5 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">The word of the day is:</h3>
-                                                <p><WOD module={module_id} /></p>
-                                                <button onClick={() => this.setStep(6)} className="btn" style={{marginRight: 10}}>See Example</button>
-                                                <button onClick={() => this.setStep(7)} className="btn btn-success">Next Step</button>
+                                                <h3 className="instruction">Examples</h3>
+                                                <p><WODExamples module={module_id} example={1} /></p>
+                                                <p><WODExamples module={module_id} example={2} /></p>
+                                                <button onClick={() => this.setStep(6)} className="btn">Next Step</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 6 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Examples</h3>
-                                                <p><WODExamples module={module_id} example={1} /></p>
-                                                <p><WODExamples module={module_id} example={2} /></p>
-                                                <button onClick={() => this.setStep(7)} className="btn">Next Step</button>
+                                                <h3 className="instruction">Part 3: Impromptu Speech Questions</h3>
+                                                <button onClick={() => this.setStep(7)} className="btn">Begin</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 7 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Part 3: Impromptu Speech Questions</h3>
-                                                <button onClick={() => this.setStep(8)} className="btn">Begin</button>
+                                                <h3 className="instruction">Ready?</h3>
+                                                <ISQExplanation module={module_id} />
+                                                <button onClick={() => this.setStep(8)} className="btn">Reveal Question</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 8 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Ready?</h3>
-                                                <button onClick={() => this.setStep(9)} className="btn">Reveal Question</button>
-                                            </div>
-                                        )}
-
-                                        {this.state.step === 9 && (
-                                            <div className="step-container">
                                                 <p className={this.state.current_time === 0 ? 'text-danger' : 'text-warning'}>{this.state.current_time}</p>
-                                                <h3 className="instruction">Q: <Speech module={module_id} question={1} /></h3>
+                                                <h3 className="instruction"><Speech module={module_id} question={1} /></h3>
                                                 
                                                 <label htmlFor="video_1"><i className="material-icons">video_call</i><br/>{this.state.video_1_name ? this.state.video_1_name : 'Upload Your Video'}</label>
                                                 <input id="video_1" name="video_1" type="file" onChange={this.onChangeVideo1} />
 
                                                 <div>
-                                                    {this.state.video_1 ? <button  onClick={() => this.setStep(10)} className="btn btn-success">Continue</button> : ''}
+                                                    {this.state.video_1 ? <button  onClick={() => this.setStep(9)} className="btn btn-success">Continue</button> : ''}
                                                     
                                                 </div>
                                             </div>
                                         )}
 
-                                        {this.state.step === 10 && (
+                                        {this.state.step === 9 && (
                                             <div className="step-container">
                                                 <h3 className="instruction">How Do You Feel?</h3>
-                                                <button onClick={() => this.setStep(11)} className="btn" style={{marginRight: 10}}>Review Answer</button>
-                                                <button onClick={() => this.setStep(12)} className="btn btn-success">Next Question</button>
+                                                <button onClick={() => this.setStep(10)} className="btn" style={{marginRight: 10}}>Review Answer</button>
+                                                <button onClick={() => this.setStep(11)} className="btn btn-success">Next Question</button>
+                                            </div>
+                                        )}
+
+                                        {this.state.step === 10 && (
+                                            <div className="step-container">
+                                                <h3 className="instruction">Your Answer</h3>
+                                                <video style={{width: '100%'}} src={this.state.video_1} controls="controls"/>
+                                                <button onClick={() => this.setStep(11)} className="btn btn-success">Done</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 11 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Your Answer</h3>
-                                                <video style={{width: '100%'}} src={this.state.video_1} controls="controls"/>
-                                                <button onClick={() => this.setStep(12)} className="btn btn-success">Done</button>
+                                                <h3 className="instruction">Question 2, Ready?</h3>
+                                                <button onClick={() => this.setStep(12)} className="btn">Reveal Question</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 12 && (
-                                            <div className="step-container">
-                                                <h3 className="instruction">Question 2, Ready?</h3>
-                                                <button onClick={() => this.setStep(13)} className="btn">Reveal Question</button>
-                                            </div>
-                                        )}
-
-                                        {this.state.step === 13 && (
                                             <div className="step-container">
                                                  <p className={this.state.current_time === 0 ? 'text-danger' : 'text-warning'}>{this.state.current_time}</p>
                                                 <h3 className="instruction">Q: <Speech module={module_id} question={2} /></h3>
@@ -387,53 +380,53 @@ class Lesson extends Component {
                                                 <input id="video_2" name="video_2" type="file" onChange={this.onChangeVideo2} />
 
                                                 <div>
-                                                    {this.state.video_2 ? <button  onClick={() => this.setStep(14)} className="btn btn-success">Continue</button> : ''}
+                                                    {this.state.video_2 ? <button  onClick={() => this.setStep(13)} className="btn btn-success">Continue</button> : ''}
                                                     
                                                 </div>
                                             </div>
                                         )}
 
-                                        {this.state.step === 14 && (
+                                        {this.state.step === 13 && (
                                             <div className="step-container">
                                                 <h3 className="instruction">How Do You Feel?</h3>
-                                                <button onClick={() => this.setStep(15)} className="btn" style={{marginRight: 10}}>Review Answer</button>
-                                                <button onClick={() => this.setStep(16)} className="btn btn-success">Next Question</button>
+                                                <button onClick={() => this.setStep(14)} className="btn" style={{marginRight: 10}}>Review Answer</button>
+                                                <button onClick={() => this.setStep(15)} className="btn btn-success">Next Question</button>
                                             </div>
                                         )}
 
-                                        {this.state.step === 15 && (
+                                        {this.state.step === 14 && (
                                             <div className="step-container">
                                                 <h3 className="instruction">Your Answer</h3>
                                                 <video style={{width: '100%'}} src={this.state.video_2} controls="controls"/>
-                                                <button onClick={() => this.setStep(16)} className="btn btn-success">Done</button>
+                                                <button onClick={() => this.setStep(15)} className="btn btn-success">Done</button>
                                             </div>
                                         )}
 
 
-                                        {this.state.step === 16 && (
+                                        {this.state.step === 15 && (
                                             <div className="step-container">
                                                 <h3 className="instruction">How Do You Feel?</h3>
-                                                <button onClick={() => this.setStep(17)} className="btn" style={{marginRight: 10}}>Review Answer</button>
-                                                <button onClick={() => this.setStep(18)} className="btn btn-success">Next Question</button>
+                                                <button onClick={() => this.setStep(16)} className="btn" style={{marginRight: 10}}>Review Answer</button>
+                                                <button onClick={() => this.setStep(17)} className="btn btn-success">Next Question</button>
+                                            </div>
+                                        )}
+
+                                        {this.state.step === 16 && (
+                                            <div className="step-container">
+                                                <h3 className="instruction">Your Answer</h3>
+                                                <video style={{width: '100%'}} src={this.state.video_3} controls="controls"/>
+                                                <button onClick={() => this.setStep(17)} className="btn btn-success">Done</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 17 && (
                                             <div className="step-container">
-                                                <h3 className="instruction">Your Answer</h3>
-                                                <video style={{width: '100%'}} src={this.state.video_3} controls="controls"/>
-                                                <button onClick={() => this.setStep(18)} className="btn btn-success">Done</button>
+                                                <h3 className="instruction">Final Question! Ready?</h3>
+                                                <button onClick={() => this.setStep(18)} className="btn">Reveal Question</button>
                                             </div>
                                         )}
 
                                         {this.state.step === 18 && (
-                                            <div className="step-container">
-                                                <h3 className="instruction">Final Question! Ready?</h3>
-                                                <button onClick={() => this.setStep(19)} className="btn">Reveal Question</button>
-                                            </div>
-                                        )}
-
-                                        {this.state.step === 19 && (
                                             <div className="step-container">
                                                  <p className={this.state.current_time === 0 ? 'text-danger' : 'text-warning'}>{this.state.current_time}</p>
                                                 <h3 className="instruction">Q: <Speech module={module_id} question={3} /></h3>
@@ -442,13 +435,13 @@ class Lesson extends Component {
                                                 <input id="video_3" name="video_3" type="file" onChange={this.onChangeVideo3} />
 
                                                 <div>
-                                                    {this.state.video_3 ? <button  onClick={() => this.setStep(20)} className="btn btn-success">Continue</button> : ''}
+                                                    {this.state.video_3 ? <button  onClick={() => this.setStep(19)} className="btn btn-success">Continue</button> : ''}
                                                     
                                                 </div>
                                             </div>
                                         )}
 
-                                        {this.state.step === 20 && (
+                                        {this.state.step === 19 && (
                                             <div className="step-container">
                                                 <h3 className="instruction">Nice :)</h3>
                                                 <p>All done for today! Please make sure you hit “Finish Lesson!” below to log your progress.</p>

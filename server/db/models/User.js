@@ -1,7 +1,7 @@
 /*
 Documentation
 
-Permitted Schema: 
+Permitted Schema:
 
 String
 Number
@@ -16,142 +16,138 @@ Map
 
 */
 
-
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
 
-    //name
-    given_name: { 
-        type: String,
-    }, 
+  // name
+  given_name: {
+    type: String,
+  },
 
-    family_name: { 
-        type: String,
-    }, 
+  family_name: {
+    type: String,
+  },
 
-    picture_url: { 
-        type: String,
-    }, 
+  picture_url: {
+    type: String,
+  },
 
-    //address
-    address_line_1: { 
-        type: String,
-    }, 
+  // address
+  address_line_1: {
+    type: String,
+  },
 
-    address_line_2: { 
-        type: String,
-    }, 
+  address_line_2: {
+    type: String,
+  },
 
-    city: { 
-        type: String,
-    }, 
+  city: {
+    type: String,
+  },
 
-    state: { 
-        type: String,
-    }, 
+  state: {
+    type: String,
+  },
 
-    country: { 
-        type: String,
-    }, 
+  country: {
+    type: String,
+  },
 
-    postal_code: { 
-        type: String,
-    }, 
-    
-    //user_info
+  postal_code: {
+    type: String,
+  },
 
-    company_d: { 
-        type: Number,
-        default: 1
-    }, 
+  // user_info
 
-    company_ame: { 
-        type: String,
-    }, 
+  company_d: {
+    type: Number,
+    default: 1,
+  },
 
-    phone: { 
-        type: String,
-    }, 
+  company_ame: {
+    type: String,
+  },
 
-    email: { 
-        type: String,
-    }, 
+  phone: {
+    type: String,
+  },
 
-   //persmissions
+  email: {
+    type: String,
+  },
 
-    is_dev: { 
-        type: Boolean,
-        default: false
-    }, 
+  // persmissions
 
-    is_admin: { 
-        type: Boolean,
-        default: false
-    }, 
-    
-    member_tier: { 
-        type: Number,
-        default: 10
-    }, 
+  is_dev: {
+    type: Boolean,
+    default: false,
+  },
 
-    active_subscription: { 
-        type: Boolean,
-        default: false
-    }, 
+  is_admin: {
+    type: Boolean,
+    default: false,
+  },
 
-    //stripe subscriptions
-    stripe_period_start: { 
-        type: Number,
-    }, 
+  member_tier: {
+    type: Number,
+    default: 10,
+  },
 
-    stripe_period_end: { 
-        type: Number,
-    }, 
+  active_subscription: {
+    type: Boolean,
+    default: false,
+  },
 
-    stripe_sub_id: { 
-        type: String,
-    }, 
+  // stripe subscriptions
+  stripe_period_start: {
+    type: Number,
+  },
 
-    stripe_cus_id: { 
-        type: String,
-    }, 
+  stripe_period_end: {
+    type: Number,
+  },
 
-   //social auth
+  stripe_sub_id: {
+    type: String,
+  },
 
-    linkedin_id: { 
-        type: String,
-    }, 
+  stripe_cus_id: {
+    type: String,
+  },
 
-    facebook_id: { 
-        type: String,
-    }, 
+  // social auth
 
-    google_id: { 
-        type: String,
-    }, 
+  linkedin_id: {
+    type: String,
+  },
 
-   
+  facebook_id: {
+    type: String,
+  },
 
-    //data
+  google_id: {
+    type: String,
+  },
 
-    last_login: { 
-        type: Number,
-        default: Math.round((new Date()).getTime() / 1000)
-    }, 
+  // data
 
-    updated_at: { 
-        type: Number,
-        default: Math.round((new Date()).getTime() / 1000)
-    }, 
-    created_at: { 
-        type: Number,
-        default: Math.round((new Date()).getTime() / 1000)
-    }, 
+  last_login: {
+    type: Number,
+    default: Math.round((new Date()).getTime() / 1000),
+  },
 
-    
+  updated_at: {
+    type: Number,
+    default: Math.round((new Date()).getTime() / 1000),
+  },
+  created_at: {
+    type: Number,
+    default: Math.round((new Date()).getTime() / 1000),
+  },
 
-})
+});
 
-mongoose.model('users', userSchema)
+mongoose.model('users', userSchema);

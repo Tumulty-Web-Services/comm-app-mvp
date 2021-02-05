@@ -5,6 +5,7 @@ this page creates the schema for course_support_tickets
 
 */
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
 
 // updated_at: DataTypes.INTEGER,
@@ -15,35 +16,33 @@ const { Schema } = mongoose;
 
 const systemLogSchema = new Schema({
 
-    error_code: { 
-        type: Number,
-    }, 
+  error_code: {
+    type: Number,
+  },
 
-    critical: { 
-        type: Boolean,
-    }, 
+  critical: {
+    type: Boolean,
+  },
 
-    text: { 
-        type: String,
-        required: true
-    }, 
+  text: {
+    type: String,
+    required: true,
+  },
 
-    lesson_id: { 
-        type: 'ObjectId',
-    }, 
+  lesson_id: {
+    type: 'ObjectId',
+  },
 
-    updated_at: { 
-        type: Number,
-        default: Math.round((new Date()).getTime() / 1000)
-    }, 
+  updated_at: {
+    type: Number,
+    default: Math.round((new Date()).getTime() / 1000),
+  },
 
-    created_at: { 
-        type: Number,
-        default: Math.round((new Date()).getTime() / 1000)
-    }, 
+  created_at: {
+    type: Number,
+    default: Math.round((new Date()).getTime() / 1000),
+  },
 
-    
+});
 
-})
-
-mongoose.model('system_logs', systemLogSchema)
+mongoose.model('system_logs', systemLogSchema);

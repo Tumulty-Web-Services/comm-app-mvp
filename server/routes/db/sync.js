@@ -4,7 +4,7 @@
 // This file holds all the routes for our internal api on the Users table
 // when creating new CRUD routes for a new table, start by copying this file.
 
-// then: 
+// then:
 // 1) change routeName to new route name
 // 2) change modelName to match a new model name
 
@@ -26,7 +26,7 @@
 
 //     /*
 //     Documentation
-    
+
 //     can get all table names from: /api/sync/info/tables
 
 //     */
@@ -41,7 +41,7 @@
 
 //         const query = `SELECT
 //         a.attname,
-//         format_type(a.atttypid, a.atttypmod) 
+//         format_type(a.atttypid, a.atttypmod)
 //       FROM
 //         pg_attribute a
 //         JOIN (SELECT *, GENERATE_SUBSCRIPTS(indkey, 1) AS indkey_subscript FROM pg_index) AS i
@@ -110,7 +110,6 @@
 //                 let columns = await db.query(query);
 //                 columns = columns[0];
 
-
 //                 //get capitalized mode nae
 //                 let tableCapitalized = tableName.charAt(0).toUpperCase() + tableName.slice(1)
 
@@ -152,11 +151,9 @@
 //                 writeStream.end();
 //             }
 
-
 //         }
 
 //         let message = 'All tables were successfully synced to models.';
-        
 
 //         //if not tables found change the message
 //         if (!result[0]) {
@@ -177,14 +174,11 @@
 //     */
 //     app.get('/api/sync/tables/:table', async (req, res) => {
 
-
-
 //         var tableName = req.params.table;
 //         const query = "SELECT COLUMN_NAME, data_type FROM information_schema.COLUMNS WHERE TABLE_NAME = '" + tableName + "';"
 
 //         let result = await db.query(query);
 //         result = result[0];
-
 
 //         //create a new file
 
@@ -192,8 +186,6 @@
 //         var tableCapitalized = tableName.charAt(0).toUpperCase() + tableName.slice(1)
 //         var writeStream = fs.createWriteStream("models/" + tableCapitalized + ".js");
 //         writeStream.write("'use strict'; module.exports = (sequelize, DataTypes) => { const " + tableCapitalized + " = sequelize.define('" + tableName + "', {");
-
-
 
 //         for (var i = result.length - 1; i >= 0; i--) {
 
@@ -220,8 +212,6 @@
 
 //             }
 
-
-
 //         }
 
 //         writeStream.write(" }, {}); " + tableCapitalized + ".associate = function(models) {   }; return " + tableCapitalized + "; };");
@@ -239,7 +229,6 @@
 //     get info for this app
 //     only viewable on a localhost
 //     */
-
 
 //     app.get('/api/sync/info/app', async (req, res) => {
 
@@ -283,7 +272,6 @@
 
 //         html += '<h1>Current Db Tables</h1>';
 
-
 //         //if emtpy send no tables
 //         if (!dbTables.data.data) {
 //             html += 'Database empty, no tables found.';
@@ -291,19 +279,14 @@
 
 //             //loop through tables for results
 //             for (let i = 0; i < dbTables.data.data.length; i++) {
-               
+
 //                 html += dbTables.data.data[i] + '<br>';
 //             }
 
 //         }
 
-       
-
-
 //         res.send(html);
 //     });
-
-
 
 //     app.get('/csv/json', async (req, res) => {
 
@@ -312,15 +295,14 @@
 //         }
 
 //         onComplete = () => {
-           
-//         }
 
+//         }
 
 //         const csvFilePath='http://aoslabs.xyz/admin/Sanghvi_EXT010_20190313.csv';
 //         console.log(csvFilePath)
 
 //         let data =[];
-//         let html = '<table style="font-size: 10px"><thead><tr>';        
+//         let html = '<table style="font-size: 10px"><thead><tr>';
 //         html += '<th style="padding: 5px" />EntryDate</th>';
 //         html += '<th style="padding: 5px" />ShortName</th>';
 //         html += '<th style="padding: 5px" />Quantity</th>';
@@ -431,6 +413,5 @@
 //         res.send(html)
 
 //     });
-
 
 // };

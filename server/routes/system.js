@@ -8,16 +8,12 @@ then:
 1) change routeName to new route name
 2) change modelName to match a new model name
 
-
-
 model names must be the table name but with a capitalize first letter
 
 */
 
-
 module.exports = (app) => {
-
-    /*
+  /*
    Documentation
    Find all from a table
 
@@ -25,25 +21,17 @@ module.exports = (app) => {
 
    */
 
-    app.get('/api/system', async(req, res) => {
+  app.get('/api/system', async (req, res) => {
+    res.send({
 
+      // dev
 
+      payment_enabled: false,
 
-        res.send({
+      // add ons
+      manager_enabled: true,
+      course_enabled: true,
 
-            //dev
-            
-            payment_enabled: false,
-
-            //add ons
-            manager_enabled: true,
-            course_enabled: true,
-           
-            
-        })
-
-    })
-
-
-
+    });
+  });
 };

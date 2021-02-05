@@ -9,19 +9,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What harsh truths do you prefer to ignore?
+                        <strong>Theme: </strong>Music<br/><br/>
+                        Q: What’s a song that transports you to a time in the past? Where does that song take you?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        Do you operate on fear or faith?
+                        <strong>Theme: </strong>Music<br/><br/>
+                        Q: What is your favorite artist? 
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        Where do you find meaning in your life?
+                        <strong>Theme: </strong>Music<br/><br/>
+                        Q: What is your favorite artist? 
                     </AuxWrapper>
                 )
             }
@@ -30,19 +33,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        Is happiness just chemicals flowing through your brain? Or is it something more?
+                        <strong>Theme: </strong>Meaning<br/><br/>
+                        Q: What makes a good person “good”?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        How much do you think language affects our thinking?
+                        <strong>Theme: </strong>Meaning<br/><br/>
+                        Q: What is a possession of yours that you value deeply? 
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        Why are humans so confident in beliefs that cannot be proven?
+                        <strong>Theme: </strong>Meaning<br/><br/>
+                        Q: What is one thing every friendship needs?                     
                     </AuxWrapper>
                 )
             }
@@ -51,21 +57,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What would be the most ethical way to give away $5 million?
-
+                        <strong>Theme: </strong>Self-reflection<br/><br/>
+                        Q: What is one thing you should let go of?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        What super power would you want? Why?
-
+                        <strong>Theme: </strong>Self-reflection<br/><br/>
+                        Q: What is one habit you think you should form?
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        If you were a fruit, what fruit would you be? Why? 
+                        <strong>Theme: </strong>Self-reflection<br/><br/>
+                        Q: What was the kindest thing you’ve ever done for someone else?
                     </AuxWrapper>
                 )
             }
@@ -74,21 +81,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        Can a society exist without laws?
-
+                        <strong>Theme: </strong>Life Lessons<br/><br/>
+                        Q: What’s the most important lesson you’ve learned about people?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        What is the best way for a person to find happiness?
-
+                        <strong>Theme: </strong>Life Lessons<br/><br/>
+                        Q: What’s the most important lesson you’ve learned about love?
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What makes an evil person evil?
+                        <strong>Theme: </strong>Life Lessons<br/><br/>
+                        Q: What’s the most important lesson you’ve learned about friendship?
                     </AuxWrapper>
                 )
             }
@@ -97,19 +105,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What is the most important goal every person should have?
+                        <strong>Theme: </strong>Miscellaneous<br/><br/>
+                        Q: What’s your favorite snack? 
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        Does fate exist? If so, do we have free will?
+                       <strong>Theme: </strong>Miscellaneous<br/><br/>
+                        Q: What is one thing the world could do without?
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What do you think your future self will remember about you now?
+                        <strong>Theme: </strong>Miscellaneous<br/><br/>
+                        Q: What’s one skill you wish you could learn overnight? 
                     </AuxWrapper>
                 )
             }
@@ -118,22 +129,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What makes a good person good?
-
+                        <strong>Theme: </strong>Dreams<br/><br/>
+                        Q: What do you usually dream about? 
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        What is something you’ll NEVER do again?
-
+                        <strong>Theme: </strong>Dreams<br/><br/>
+                        Q: What is the most vivid dream you remember? What do you think it meant? 
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What event in your life would make for a good movie?
-
+                        <strong>Theme: </strong>Dreams<br/><br/>
+                        Q: Where do you think dreams come from? Are they meaningful or are they just random events? 
                     </AuxWrapper>
                 )
             }
@@ -142,20 +153,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What is the strangest thing you have ever come across?
+                        <strong>Theme: </strong>Self-reflection<br/><br/>
+                        Q: Do you lie to yourself? 
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        What would you do if you knew you were going to die in one hour?
-
+                       <strong>Theme: </strong>Self-reflection<br/><br/>
+                        Q: What do you need to forgive yourself for? 
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What risks are worth taking?
+                        <strong>Theme: </strong>Self-reflection<br/><br/>
+                        Q: What are you most proud of yourself for doing? 
                     </AuxWrapper>
                 )
             }
@@ -164,20 +177,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What’s the biggest challenge in your life right now?
-
+                        <strong>Theme: </strong>Nostalgia<br/><br/>
+                        Q: What was your first favorite band? How old were you?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        How would you describe your sense of humor?
+                       <strong>Theme: </strong>Nostalgia<br/><br/>
+                        Q: You’re allowed to go back in time to your childhood and you can bring back one, single item. What are you bringing back?
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What’s the hardest lesson you’ve ever learned?
+                        <strong>Theme: </strong>Nostalgia<br/><br/>
+                        Q: Is there a particular decade you wish you could go back to and visit or live in?                      
                     </AuxWrapper>
                 )
             }
@@ -186,19 +201,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        If your childhood had a smell, what would it be?
+                        <strong>Theme: </strong>Miscellaneous<br/><br/>
+                        Q: Who is someone in your life you admire?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        If your life was a book, what would its title be? Why?
+                        <strong>Theme: </strong>Miscellaneous<br/><br/>
+                        Q: What’s your guilty pleasure? 
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What makes a person beautiful?
+                        <strong>Theme: </strong>Miscellaneous<br/><br/>
+                        Q: What are you most grateful for?
                     </AuxWrapper>
                 )
             }
@@ -207,22 +225,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What scares you?
-
+                        <strong>Theme: </strong>Meaning<br/><br/>
+                        Q: What does your own personal heaven look like?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        What is your guilty pleasure?
-
+                        <strong>Theme: </strong>Meaning<br/><br/>
+                        Q: What does it mean to be a friend?
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What is something you’re obsessed with?
-
+                        <strong>Theme: </strong>Meaning<br/><br/>
+                        Q: What is the most important virtue?
                     </AuxWrapper>
                 )
             }
@@ -231,19 +249,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What makes you nervous? Why?
+                        <strong>Theme: </strong>Self-Reflection<br/><br/>
+                        Q: What’s one small thing you could start doing tomorrow that would improve your life?
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        Who’s your favorite musician or band? Why?
+                        <strong>Theme: </strong>Self-Reflection<br/><br/>
+                        Q: What is one habit you have that you think you should stop?
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        What makes for a true friend?
+                        <strong>Theme: </strong>Self-Reflection<br/><br/>
+                        Q: How would you describe yourself in five words?
                     </AuxWrapper>
                 )
             }
@@ -252,21 +273,22 @@ const Speech = (props) => {
             if (props.question === 1) {
                 return (
                     <AuxWrapper>
-                        What is your biggest flaw?
-
+                        <strong>Theme: </strong>Music<br/><br/>
+                        Q: Who is your favorite solo artist? 
                     </AuxWrapper>
                 )
             } else if (props.question === 2) {
                 return (
                     <AuxWrapper>
-                        What’s your favorite food? Why?
-
+                        <strong>Theme: </strong>Music<br/><br/>
+                        Q: What do you notice first in a song? The lyrics? The instruments? The vocals?  
                     </AuxWrapper>
                 )
             } else {
                 return (
                     <AuxWrapper>
-                        If all your memories were erased, what kind of person would you be?
+                        <strong>Theme: </strong>Music<br/><br/>
+                        Q: What song or artist do you put on when you’re sad?
                     </AuxWrapper>
                 )
             }

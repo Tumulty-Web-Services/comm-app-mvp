@@ -8,290 +8,241 @@ then:
 1) change routeName to new route name
 2) change modelName to match a new model name
 
-
-
 model names must be the collection name but with a capitalize first letter
 
 */
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 module.exports = (app) => {
+  // find all by collection
+  app.get('/api/:collection/get/all', async (req, res) => {
+    const { collection } = req.params;
+    let Collection;
 
+    try {
+      Collection = mongoose.model(collection);
+    } catch (e) {
+      res.status(422).send({
+        error: `The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ${collection}`,
+      });
 
+      return;
+    }
 
-    //find all by collection
-    app.get('/api/:collection/get/all', async(req, res) => {
+    // get all objects from this collection and sort in descending order
 
-        var collection = req.params.collection;
-        let Collection;
+    let objects = {};
 
-       try {
-        Collection = mongoose.model(collection)
-       } catch(e) {
-           res.status(422).send({
-               error: 'The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ' + collection
-           })
+    try {
+      objects = await Collection.find({}).sort({ _id: -1 });
+    } catch (e) {
+      res.status(422).send(e);
+      return;
+    }
 
-           return;
-       }
+    res.send(objects);
 
-        //get all objects from this collection and sort in descending order
+    // var collection = req.params.collection;
 
-        let objects = {};
+    // //check if we should limit results
+    // let limit = req.query.limit
+    // let limitText = (limit)
+    //     ? ` LIMIT $limit`
+    //     : '';
 
-        try {
-            objects = await Collection.find({}).sort({'_id': -1})
-        } catch(e) {
-            res.status(422).send(e);
-            return;
-        }
+    // //check if we have order values
+    // let searchColumn = req.query.searchColumn
+    // let search = req.query.search
+    // let searchText = '';
 
-        res.send(objects)
+    // if (searchColumn && search) {
+    //     searchText = `WHERE "${searchColumn}" ILIKE $search`;
+    // }
 
-        // var collection = req.params.collection;
+    // //check to see if we should order results
+    // let order = req.query.order
+    // let orderColumn = req.query.orderColumn
 
-        // //check if we should limit results
-        // let limit = req.query.limit
-        // let limitText = (limit)
-        //     ? ` LIMIT $limit`
-        //     : '';
+    // //set default order to order by newest
+    // let orderText = `ORDER BY "id" DESC`;
 
-        // //check if we have order values
-        // let searchColumn = req.query.searchColumn
-        // let search = req.query.search
-        // let searchText = '';
+    // if (order && orderColumn) {
+    //     orderText = `ORDER BY "${orderColumn}" ${order}`;
+    // }
 
-        // if (searchColumn && search) {
-        //     searchText = `WHERE "${searchColumn}" ILIKE $search`;
-        // }
+    // try {
+    //     //run the built query
+    //     let result = await db
+    //         .sequelize
+    //         .query(`SELECT * FROM "${collection}"  ${searchText}  ${orderText} ${limitText}`, {
+    //             bind: {
+    //                 searchColumn,
+    //                 orderColumn,
+    //                 order,
+    //                 search,
+    //                 limit
+    //             }
+    //         });
+    //     result = result[0];
 
-        // //check to see if we should order results
-        // let order = req.query.order
-        // let orderColumn = req.query.orderColumn
+    //     res.json(result);
+    // } catch (e) {
 
-        // //set default order to order by newest
-        // let orderText = `ORDER BY "id" DESC`;
+    //     console.log(e);
+    //     res
+    //         .status(400)
+    //         .send(e);
 
-        // if (order && orderColumn) {
-        //     orderText = `ORDER BY "${orderColumn}" ${order}`;
-        // }
+    // }
+  });
 
-        // try {
-        //     //run the built query
-        //     let result = await db
-        //         .sequelize
-        //         .query(`SELECT * FROM "${collection}"  ${searchText}  ${orderText} ${limitText}`, {
-        //             bind: {
-        //                 searchColumn,
-        //                 orderColumn,
-        //                 order,
-        //                 search,
-        //                 limit
-        //             }
-        //         });
-        //     result = result[0];
+  // find document by collection and id
+  app.get('/api/:collection/get/:id', async (req, res) => {
+    const _id = req.params.id;
+    const { collection } = req.params;
+    let Collection;
 
-        //     res.json(result);
-        // } catch (e) {
+    if (!_id) {
+      res.status(422).json({ error: 'No id was passed.' });
+    }
 
-        //     console.log(e);
-        //     res
-        //         .status(400)
-        //         .send(e);
+    try {
+      Collection = mongoose.model(collection);
+    } catch (e) {
+      res.status(422).send({
+        error: `The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ${collection}`,
+      });
+    }
 
-        // }
+    // get all objects from this collection and sort in descending order
 
-    })
+    let object = {};
 
+    try {
+      object = await Collection.findById(_id);
 
-    //find document by collection and id
-    app.get('/api/:collection/get/:id', async(req, res) => {
+      if (!object) {
+        object = {};
+      }
+    } catch (e) {
+      res.status(422).send(e);
+      return;
+    }
 
+    res.send(object);
+  });
 
-        const _id = req.params.id;
-        var collection = req.params.collection;
-        let Collection;
+  // update document by collection and id
+  app.post('/api/:collection/update/:id', async (req, res, next) => {
+    const _id = req.params.id;
+    const { collection } = req.params;
+    const { body } = req;
 
-        if (!_id) {
-            res.status(422).json({error: 'No id was passed.'});
-        }
+    let Collection;
 
-        
+    // if we dont have an _id send an error
+    if (!_id) {
+      res.status(422).json({ error: 'No id was passed.' });
+      return;
+    }
 
-        try {
+    // if body of request is emtpy send an error
+    if (Object.getOwnPropertyNames(body).length === 0) {
+      res.status(422).json({ error: 'No values were past in post request.' });
+      return;
+    }
 
-            Collection = mongoose.model(collection)
+    // if a collection name was sent we dont have send an error
+    try {
+      Collection = mongoose.model(collection);
+    } catch (e) {
+      res.status(422).send(`The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ${collection}`);
 
-        } catch(e) {
+      return;
+    }
 
-            res.status(422).send({
-                error: 'The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ' + collection
-            })
+    Collection.findOneAndUpdate({ _id }, {
+      ...body,
+      updated_at: Math.round((new Date()).getTime() / 1000),
+    }, { new: true }, (e, doc) => {
+      // if an error happened in updating send an error
+      if (e) {
+        res.status(422).json(e);
+        return;
+      }
 
-        }
-
-        //get all objects from this collection and sort in descending order
-
-        let object = {};
-
-        try {
-
-            object = await Collection.findById(_id);
-
-            if(!object) {
-                object = {};
-            }
-
-        } catch(e) {
-
-            res.status(422).send(e);
-            return;
-
-        }
-
-        res.send(object)
-
+      // SUCCESS!! send back updated document
+      res.send(doc);
     });
+  });
 
-    //update document by collection and id
-    app.post('/api/:collection/update/:id', async(req, res, next) => {
+  // create document by collection
+  app.post('/api/:collection/create', async (req, res) => {
+    const { collection } = req.params;
+    const { body } = req;
 
-        const _id = req.params.id;
-        const collection = req.params.collection; 
-        const body = req.body;
+    let Collection;
 
-        let Collection;
+    // if body of request is emtpy send an error
+    if (Object.getOwnPropertyNames(body).length === 0) {
+      res.status(422).json({ error: 'No values were past in post request.' });
+      return;
+    }
 
-        //if we dont have an _id send an error
-        if (!_id) {
-            res.status(422).json({error: 'No id was passed.'});
-            return;
-        }
+    // if a collection name was sent we dont have send an err or
+    try {
+      Collection = mongoose.model(collection);
+    } catch (e) {
+      res.status(422).send({
+        error: `The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ${collection}`,
+      });
 
-        //if body of request is emtpy send an error
-        if(Object.getOwnPropertyNames(body).length === 0){
-            res.status(422).json({error: 'No values were past in post request.'});
-            return;
-          }
+      return;
+    }
 
-        //if a collection name was sent we dont have send an error
-        try {
+    const newDoc = await new Collection({
+      ...body,
+      created_at: Math.round((new Date()).getTime() / 1000),
+    }).save();
 
-            Collection = mongoose.model(collection)
+    if (!newDoc) {
+      res.status(422).send({ error: 'An error occurred creating this document' });
+    }
 
-        } catch(e) {
+    res.send(newDoc);
+  });
 
-            res.status(422).send('The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ' + collection)
+  // delete document by collection and _id
+  app.post('/api/:collection/delete/:id', async (req, res) => {
+    const _id = req.params.id;
+    const { collection } = req.params;
 
-            return;
+    let Collection;
 
-        }
+    // if we dont have an _id send an error
+    if (!_id) {
+      res.status(422).json({ error: 'No id was passed.' });
+      return;
+    }
 
+    // if a collection name was sent we dont have send an error
+    try {
+      Collection = mongoose.model(collection);
+    } catch (e) {
+      res.status(422).send({
+        error: `The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ${collection}`,
+      });
 
-        Collection.findOneAndUpdate({_id}, {
-            ...body,
-            updated_at: Math.round((new Date()).getTime() / 1000)
-        }, {new: true}, (e, doc) => {
+      return;
+    }
 
-            //if an error happened in updating send an error
-            if (e) {
-                res.status(422).json(e)
-                return;
-            }
+    Collection.deleteOne({ _id }, (e) => {
+      if (e) {
+        res.send({ success: false, error: 'Something went wrong deleting this document.' });
+      }
 
-            //SUCCESS!! send back updated document
-            res.send(doc)
-        });
-
-       
-
+      res.send({ success: true });
     });
-
-    //create document by collection
-    app.post('/api/:collection/create', async(req, res) => {
-
-        const collection = req.params.collection; 
-        const body = req.body;
-
-        let Collection;
-
-        //if body of request is emtpy send an error
-        if(Object.getOwnPropertyNames(body).length === 0){
-            res.status(422).json({error: 'No values were past in post request.'});
-            return;
-          }
-
-        //if a collection name was sent we dont have send an err or
-        try {
-
-            Collection = mongoose.model(collection)
-
-        } catch(e) {
-            res.status(422).send({
-                error: 'The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ' + collection
-            })
-
-            return;
-
-        }
-
-        const newDoc = await new Collection ({
-            ...body,
-            created_at: Math.round((new Date()).getTime() / 1000)
-        }).save();
-
-        if(!newDoc) {
-            res.status(422).send({error: 'An error occurred creating this document'});
-        }
-
-        res.send(newDoc)
-
-
-    });
-
-
-    //delete document by collection and _id
-    app.post('/api/:collection/delete/:id', async(req, res) => {
-
-        const _id = req.params.id;
-        const collection = req.params.collection; 
-
-        let Collection;
-
-        //if we dont have an _id send an error
-        if (!_id) {
-            res.status(422).json({error: 'No id was passed.'});
-            return;
-        }
-
-       
-        //if a collection name was sent we dont have send an error
-        try {
-
-            Collection = mongoose.model(collection)
-
-        } catch(e) {
-
-            res.status(422).send({
-                error: 'The collection name you sent does not exist. Replace it with a collection that does and try again. Collection Name Sent: ' + collection
-            })
-
-            return;
-
-        }
-
-        Collection.deleteOne({ _id }, function (e) {
-
-            if (e) {
-                res.send({success: false, error: 'Something went wrong deleting this document.'});
-            }
-
-            res.send({success: true})
-
-          });
-
-
-    });
-
+  });
 };

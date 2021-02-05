@@ -10,38 +10,18 @@ const VocalWarmups = (props) => {
             if(props.warmup === 1) {
                 return (
                     <AuxWrapper>
-                        Denise sees the fleece,<br />
-                        Denise sees the fleas.<br />
-                        At least Denise could sneeze<br />
-                        and feed and freeze the fleas.<br />
+                     My voice is my power, my strength and my vehicle for positive change in my life.
     
                     </AuxWrapper>
                 )
-            } else {
-                return (
-                    <AuxWrapper>
-                        The thirty-three thieves thought that they thrilled the throne throughout Thursday 
-                    </AuxWrapper>
-                )
-            }
+            } 
             
         case 2:
 
             if(props.warmup === 1) {
                 return (
                     <AuxWrapper>
-                        There was a fisherman named Fisher<br />
-                        who fished for some fish in a fissure.<br />
-                        Till a fish with a grin pulled the fisherman in.<br />
-                        Now they're fishing the fissure for Fisher.<br />
-
-
-                    </AuxWrapper>
-                )
-            } else {
-                return (
-                    <AuxWrapper>
-                        Can you can a can as a canner can can a<br /> can?  
+                        I use my voice to be an advocate for myself and a beacon of hope for those who are around me.
                     </AuxWrapper>
                 )
             }
@@ -51,19 +31,7 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            Luke Luck likes lakes. Luke's duck likes lakes.<br />
-                            Luke Luck licks lakes. Luck's duck licks lakes.<br />
-                            Duck takes licks in lakes that Luke Luck likes.<br />
-                            Luke Luck takes licks in lakes duck likes.<br />
-
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            Six sick hicks nick six slick bricks with picks and<br />
-                            sticks. 
+                           I am truthful, I am open, I am vulnerable and these are my strengths that I value and know will set me free.
                         </AuxWrapper>
                     )
                 }
@@ -72,17 +40,7 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            One-one was a racehorse. <br />
-                            Two-two was one, too.<br />
-                            One-one won one race. <br />
-                            Two-two won one too.<br />
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            How can a clam cram in a clean cream can? 
+                            My Divine Light will not be extinguished and my voice will not be silenced by those who choose darkness.
                         </AuxWrapper>
                     )
                 }
@@ -91,16 +49,7 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            How many cookies could a good cook cook If a good cook could cook cookies?<br />
-                            A good cook could cook as much cookies as a good cook who could cook cookies. 
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            Thistle sticks, sixty six thousand and six thistle sticks. 
-
+                            I speak truthfully and I listen intently so I may move with integrity and grow closer to my most authentic self.
                         </AuxWrapper>
                     )
                 }
@@ -109,14 +58,7 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            How much ground would a groundhog hog, if a groundhog could hog ground?<br />
-                            A groundhog would hog all the ground he could hog,<br /> if a groundhog could hog ground. 
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            Seth at Sainsbury's sells thick socks. 
+                            It is through my spoken word that I shape my reality and it is with this power that I bring about peace and abundance in my life
                         </AuxWrapper>
                     )
                 }
@@ -125,20 +67,7 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            Mary Mac's mother's making Mary Mac marry me.<br />
-                            My mother's making me marry Mary Mac. <br />
-                            Will I always be so merry when Mary's taking care of me? <br />
-                            Will I always be so merry when I marry Mary Mac?<br />
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            Black background, brown background<br />
-                            Black background, brown background<br />
-                            Black background, brown background<br />
-
+                            I am committed to speaking my truth clearly, precisely and with integrity.
                         </AuxWrapper>
                     )
                 }
@@ -147,20 +76,7 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            Through three cheese trees three free fleas flew.<br />
-                            While these fleas flew, freezy breeze blew.<br />
-                            Freezy breeze made these three trees freeze.<br />
-                            Freezy trees made these trees' cheese freeze.<br />
-                            That's what made these three free fleas sneeze. 
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            Picky people pick Peter Pan Peanut-Butter<br />
-                            'tis the peanut-butter picky people pick.<br />
-
+                            I am committed to expressing myself to the best of my ability all of the time so I may create a reality in which I flourish
                         </AuxWrapper>
                     )
                 }
@@ -169,15 +85,7 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            How many cans can a cannibal nibble if a cannibal can nibble cans?<br />
-                            As many cans as a cannibal can nibble if a cannibal can nibble cans.<br />
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            If Stu chews shoes, should Stu choose the shoes he chews? 
+                            I am committed to improving myself because I love myself and deserve to embrace my highest self so I may fulfill my ultimate purpose
                         </AuxWrapper>
                     )
                 }
@@ -186,17 +94,10 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            How many berries could a bare berry carry,<br />
-                            if a bare berry could carry berries? <br />
-                            Well, they can't carry berries, which could make you very wary... <br />
-                            but a bare berry carried is more scary!<br />
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            Six sleek swans swam swiftly southwards.
+                            I speak confidently<br />
+                            I speak truthfully<br />
+                            I speak clearly<br />
+                            My speech is divine<br />
                         </AuxWrapper>
                     )
                 }
@@ -205,17 +106,10 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            Yally Bally had a jolly golliwog.<br />
-                            Feeling folly, Yally Bally bought his jolly golli a dollie made of holly!<br />
-                            The golli', feeling jolly, named the holly dollie, Polly.<br />
-                            So Yally Bally's jolly golli's holly dollie Polly's also jolly!<br />
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            When you write copy you have the right to copyright the copy you write. 
+                            I move with integrity<br />
+                            I move with authenticity <br />
+                            I move with an open heart<br />
+                            I speak true to my most authentic self<br />
                         </AuxWrapper>
                     )
                 }
@@ -224,17 +118,9 @@ const VocalWarmups = (props) => {
                 if(props.warmup === 1) {
                     return (
                         <AuxWrapper>
-                            I'm not the fig plucker, nor the fig plucker's son.<br />
-                            But I'll pluck figs till the fig plucker comes.<br />
-
-                        </AuxWrapper>
-                    )
-                } else {
-                    return (
-                        <AuxWrapper>
-                            Hassock hassock, black spotted hassock.<br />
-                            Black spot on a black back of a black spotted hassock.<br />
-
+                            My speech inspires<br />
+                            My speech delights<br />
+                            My speech is divine<br />
                         </AuxWrapper>
                     )
                 }
