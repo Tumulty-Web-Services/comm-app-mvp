@@ -24,7 +24,7 @@ const Speech = (props) => {
                 return (
                     <AuxWrapper>
                         <strong>Theme: </strong>Music<br/><br/>
-                        Q: What is your favorite artist? 
+                        Q: What is your favorite album of all time? 
                     </AuxWrapper>
                 )
             }
